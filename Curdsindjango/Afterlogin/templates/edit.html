@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Details </title>
+</head>
+
+<body>
+    <div class="container-fluid col-lg-2">
+        <h1> Edit Details</h1>
+        {% for i in emp %}
+        <form action="{% url 'edit_details' i.id %}" method="POST" id="frm">
+            {% csrf_token %}
+            <label for="Car_name">Car_name:</label>
+            <input value={{i.Car_name}} type="text" name="Car_name" id="Car_name"><br><br>
+
+            <label for="model">Model:</label>
+            <input value={{i.model}} type="text" name="model" id="model"><br><br>
+
+            <label for="price">Price:</label>
+            <input value={{i.price}} type="text" name="price" id="price"><br><br>
+
+            <label for="brand">brand:</label>
+            <input value={{i.brand}} type="text" name="brand" id="brand"><br><br>
+
+            <a href="/update_details/{{i.id}}" type="submit" class="btn btn-primary" value="Submit"><button>Update </button></a>
+        </form>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

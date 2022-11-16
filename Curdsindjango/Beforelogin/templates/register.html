@@ -1,0 +1,50 @@
+ {% extends 'base.html' %}{% load crispy_forms_tags %} {% load static %} {% block body %}
+
+
+<div class=" container-fluid ">
+    <div class="col-2">
+        <h2>Register Your Information</h2>
+        <form action="" method="POST" id="frm">
+            {% csrf_token %} {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+            {% endif %}
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{values.name}}"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="{{values.email}}"><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" id="phone" value="{{values.phone}}"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="{{values.password}}"><br><br>
+
+            <button type="submit" class="btn btn-primary" value="">Submit</button></button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script>
+    $("#frm").validate({
+        rules: {
+            name: 'required',
+            email: 'required',
+            phone: 'required',
+            password: 'required',
+        },
+        messages: {
+            name: 'This field is required',
+            email: 'Enter a valid email',
+            phone: 'This field is required',
+            password: 'Enter your password',
+        },
+    })
+</script> -->assword: 'Enter your password', }, })
+</script> -->
